@@ -1,0 +1,83 @@
+<div class="row">
+
+  <div class="col-sm-6">
+
+    <div class="panel panel-primary text-center">
+      <div class="panel-heading"><h4>Burger Choices</h4></div>
+        <div class="panel-body">
+
+          <div class="row">
+
+            <div class="col-md-8">
+
+              {{#each burgerList}}
+                {{#unless this.devoured}}
+                  <p>Burger Name: {{this.burgerName}}</p>
+                  <br>
+                {{/unless}}
+              {{/each}}
+
+            </div>
+
+            <div class="col-md-4">
+              
+              {{#each burgerList}}
+                {{#unless this.devoured}}
+                  <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="true">
+                    <button type="submit" class='btn btn-danger'>Devour It</button>
+                  </form>
+                  <br>
+                {{/unless}}
+              {{/each}}
+
+            </div>
+
+          </div>
+
+          
+        </div>
+    </div>
+  </div>
+
+ 
+
+  <div class="col-sm-6">
+
+    <div class="panel panel-primary text-center">
+      <div class="panel-heading"><h4>Burgers Devoured!</h4></div>
+        <div class="panel-body" style='text-align: center;'>
+          
+          {{#each burgerList}}
+            {{#if this.devoured}}
+                <p>Burger Name: {{this.burgerName}}</p>
+            {{/if}}
+          {{/each}}
+          
+        </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-primary text-center">
+      <div class="panel-heading"><h4>Create a New Burger</h4></div>
+        <div class="panel-body">
+
+          <form class="create-update-form" action="burgers/create" method="POST">
+            <div class="form-group">
+              <label for="burgerName">Burger Name: </label>
+              <input type="text" id="burgerName" name="burgerName">
+              <button type="submit"  class="btn btn-lg btn-success">Create Burger!</button>
+            </div>
+          </form>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+
+

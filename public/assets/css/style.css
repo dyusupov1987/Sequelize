@@ -1,0 +1,36 @@
+body {
+  background-image: url('../img/background.jpg')
+}
+
+/* Jumbotron */
+.jumbotron h2 {
+  text-align: center;
+  font-family: 'Baloo Thambi', cursive;
+  color: white;
+  font-size: 48px;
+}
+
+.jumbotron {
+  background-color: blue;
+}
+
+p {
+  font-size: 24px;
+  font-family: 'Indie Flower', cursive;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4{
+  font-family: 'Indie Flower', cursive;
+  font-size: 24px;
+}
+
+.footer{
+ position:fixed;
+ bottom:0;
+ width: 100%;
+ text-align: center;
+}
